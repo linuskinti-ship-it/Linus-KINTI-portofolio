@@ -101,3 +101,21 @@ nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
 }));
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// Préférence de confidentialité : aucun cookie ni traceur tiers n'est installé.
+const cookieBanner = document.getElementById("cookie-banner");
+const consentKey = "linus-portfolio-privacy-choice-v1";
+try {
+  if (cookieBanner && !localStorage.getItem(consentKey)) cookieBanner.hidden = false;
+  ["cookie-accept", "cookie-reject"].forEach(id => {
+    const control = document.getElementById(id);
+    if (control) control.addEventListener("click", () => {
+      try { localStorage.setItem(consentKey, id === "cookie-accept" ? "accepted" : "rejected"); }
+      catch (error) { /* Le site reste utilisable si le stockage local est désactivé. */ }
+      if (cookieBanner) cookieBanner.hidden = true;
+    });
+  });
+} catch (error) {
+  if (cookieBanner) cookieBanner.hidden = false;
+}
