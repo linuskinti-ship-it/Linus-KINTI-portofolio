@@ -1,6 +1,6 @@
 PORTFOLIO LINUS KINTI — NOTES DE DÉPLOIEMENT
 
-1) Dépôt prévu : https://linuskinti-ship-it.github.io/mon-portfolio/
+1) Dépôt prévu : https://linuskinti-ship-it.github.io/Linus-KINTI-portofolio/
    Si le nom réel du dépôt GitHub est différent, remplacez l'URL ci-dessus dans :
    - index.html (og:image et twitter:image)
    - robots.txt (directive Sitemap)
